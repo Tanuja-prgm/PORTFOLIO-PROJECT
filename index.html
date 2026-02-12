@@ -1,254 +1,182 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Tanuja | Creative Portfolio</title>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tanuja | Portfolio</title>
 
-<style>
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  font-family:'Poppins',sans-serif;
-  scroll-behavior:smooth;
-}
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
 
-body{
-  background:#0f0c29;
-  background:linear-gradient(135deg,#0f0c29,#302b63,#24243e);
-  color:white;
-  overflow-x:hidden;
-}
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+      scroll-behavior: smooth;
+    }
 
-/* Navbar */
-nav{
-  position:fixed;
-  width:100%;
-  top:0;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  padding:20px 60px;
-  background:rgba(0,0,0,0.3);
-  backdrop-filter:blur(10px);
-  z-index:1000;
-}
+    body {
+      overflow-x: hidden;
+      background: linear-gradient(-45deg, #ff9a9e, #fad0c4, #a18cd1, #fbc2eb);
+      background-size: 400% 400%;
+      animation: gradientBG 12s ease infinite;
+      color: white;
+    }
 
-nav h2{
-  font-weight:800;
-  color:#ff4ecd;
-}
+    @keyframes gradientBG {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
 
-nav ul{
-  display:flex;
-  list-style:none;
-  gap:30px;
-}
+    section {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 40px 20px;
+    }
 
-nav ul li a{
-  text-decoration:none;
-  color:white;
-  font-weight:500;
-  transition:0.3s;
-}
+    h1 {
+      font-size: 60px;
+      font-weight: 800;
+      margin-bottom: 20px;
+      animation: fadeDown 1.5s ease;
+    }
 
-nav ul li a:hover{
-  color:#ff4ecd;
-}
+    h2 {
+      font-size: 40px;
+      margin-bottom: 20px;
+    }
 
-section{
-  min-height:100vh;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  align-items:center;
-  text-align:center;
-  padding:100px 20px;
-}
+    p {
+      max-width: 600px;
+      font-size: 18px;
+      margin-bottom: 20px;
+    }
 
-.hero h1{
-  font-size:60px;
-  font-weight:800;
-}
+    .btn {
+      padding: 12px 30px;
+      border-radius: 30px;
+      border: none;
+      cursor: pointer;
+      font-weight: 600;
+      background: white;
+      color: #a18cd1;
+      transition: 0.3s ease;
+    }
 
-.hero span{
-  color:#ff4ecd;
-}
+    .btn:hover {
+      transform: scale(1.1);
+      background: #fff;
+      color: #ff758c;
+    }
 
-.typing{
-  font-size:22px;
-  margin-top:20px;
-  height:30px;
-}
+    /* Glass Card */
+    .card {
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(10px);
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+      margin: 20px;
+      width: 280px;
+      transition: 0.4s ease;
+    }
 
-.btn{
-  margin-top:30px;
-  padding:12px 30px;
-  border:none;
-  border-radius:30px;
-  background:#ff4ecd;
-  color:white;
-  font-weight:600;
-  cursor:pointer;
-  transition:0.3s;
-}
+    .card:hover {
+      transform: translateY(-10px);
+    }
 
-.btn:hover{
-  transform:scale(1.1);
-  box-shadow:0 0 20px #ff4ecd;
-}
+    .skills-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
 
-/* Glass Card */
-.card{
-  background:rgba(255,255,255,0.08);
-  backdrop-filter:blur(10px);
-  padding:30px;
-  border-radius:20px;
-  margin:15px;
-  width:280px;
-  transition:0.4s;
-}
+    /* Animations */
+    @keyframes fadeDown {
+      from { opacity: 0; transform: translateY(-40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
 
-.card:hover{
-  transform:translateY(-10px);
-  box-shadow:0 0 20px rgba(255,78,205,0.5);
-}
+    .fade-up {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: all 1s ease;
+    }
 
-.cards{
-  display:flex;
-  flex-wrap:wrap;
-  justify-content:center;
-}
+    .fade-up.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
 
-/* Skills Bar */
-.skill{
-  width:300px;
-  margin:15px;
-}
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: rgba(0,0,0,0.2);
+    }
 
-.skill-bar{
-  background:#444;
-  border-radius:20px;
-  overflow:hidden;
-}
-
-.skill-fill{
-  height:10px;
-  background:linear-gradient(90deg,#ff4ecd,#6a5acd);
-  width:0;
-  transition:2s;
-}
-
-footer{
-  padding:20px;
-  text-align:center;
-  background:black;
-}
-
-@media(max-width:768px){
-  nav{padding:20px;}
-  .hero h1{font-size:40px;}
-}
-</style>
+    @media(max-width:768px){
+      h1 { font-size: 40px; }
+      h2 { font-size: 28px; }
+    }
+  </style>
 </head>
 
 <body>
 
-<nav>
-  <h2>Tanuja</h2>
-  <ul>
-    <li><a href="#home">Home</a></li>
-    <li><a href="#about">About</a></li>
-    <li><a href="#skills">Skills</a></li>
-    <li><a href="#projects">Projects</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ul>
-</nav>
+  <!-- Hero Section -->
+  <section>
+    <h1>Hey 👋 I'm Tanuja</h1>
+    <p>🎓 Student | 💻 Java Developer | 🌐 HTML & C Programmer</p>
+    <button class="btn">View My Work</button>
+  </section>
 
-<section id="home" class="hero">
-  <h1>Hey 👋 I'm <span>Tanuja</span></h1>
-  <div class="typing" id="typing"></div>
-  <button class="btn">Download Resume</button>
-</section>
+  <!-- About Section -->
+  <section>
+    <h2>About Me ✨</h2>
+    <p class="fade-up">I am a passionate student who loves building creative and colorful websites. I enjoy coding in Java, HTML, and C, and I am continuously learning to become a professional developer.</p>
+  </section>
 
-<section id="about">
-  <h2>About Me ✨</h2>
-  <p style="max-width:600px;margin-top:20px;">
-    I am a passionate student skilled in Java, HTML and C programming. I love building creative websites and continuously learning new technologies.
-  </p>
-</section>
+  <!-- Skills Section -->
+  <section>
+    <h2>My Skills 🚀</h2>
+    <div class="skills-container">
+      <div class="card fade-up">Java ☕</div>
+      <div class="card fade-up">HTML 🌐</div>
+      <div class="card fade-up">C Programming 💻</div>
+    </div>
+  </section>
 
-<section id="skills">
-  <h2>My Skills 🚀</h2>
-  <div class="skill">
-    <p>Java</p>
-    <div class="skill-bar"><div class="skill-fill" data-width="85%"></div></div>
-  </div>
-  <div class="skill">
-    <p>HTML</p>
-    <div class="skill-bar"><div class="skill-fill" data-width="90%"></div></div>
-  </div>
-  <div class="skill">
-    <p>C Programming</p>
-    <div class="skill-bar"><div class="skill-fill" data-width="75%"></div></div>
-  </div>
-</section>
+  <!-- Contact Section -->
+  <section>
+    <h2>Let's Connect 💌</h2>
+    <p class="fade-up">Open to internships and collaboration opportunities.</p>
+    <button class="btn">Contact Me</button>
+  </section>
 
-<section id="projects">
-  <h2>Projects 🎨</h2>
-  <div class="cards">
-   
-    <div class="card">Java Mini Project</div>
-    <div class="card">C Programming Application</div>
-  </div>
-</section>
+  <footer>
+    © 2026 Tanuja | Creative Portfolio
+  </footer>
 
-<section id="contact">
-  <h2>Let's Connect 💌</h2>
-  <p>Email: tanujahasan113@gmail.com</p>
-</section>
-
-<footer>
-  © 2026 Tanuja | Designed with ❤️
-</footer>
-
-<script>
-// Typing Effect
-const texts = ["🎓 Student"];
-let i=0,j=0,currentText="",isDeleting=false;
-function type(){
-  if(i<texts.length){
-    if(!isDeleting && j<=texts[i].length){
-      currentText=texts[i].substring(0,j++);
-    }else if(isDeleting && j>=0){
-      currentText=texts[i].substring(0,j--);
-    }
-    document.getElementById("typing").innerHTML=currentText;
-    if(j==texts[i].length) isDeleting=true;
-    if(j==0 && isDeleting){isDeleting=false;i++;}
-    if(i==texts.length) i=0;
-  }
-  setTimeout(type,100);
-}
-type();
-
-// Skill Animation on Scroll
-const fills=document.querySelectorAll('.skill-fill');
-window.addEventListener('scroll',()=>{
-  fills.forEach(fill=>{
-    const top=fill.getBoundingClientRect().top;
-    if(top<window.innerHeight-50){
-      fill.style.width=fill.dataset.width;
-    }
-  });
-});
-</script>
+  <script>
+    // Scroll Animation
+    const faders = document.querySelectorAll('.fade-up');
+    window.addEventListener('scroll', () => {
+      const triggerBottom = window.innerHeight * 0.8;
+      faders.forEach(fader => {
+        const boxTop = fader.getBoundingClientRect().top;
+        if(boxTop < triggerBottom){
+          fader.classList.add('active');
+        }
+      });
+    });
+  </script>
 
 </body>
 </html>
-
-
-
-
