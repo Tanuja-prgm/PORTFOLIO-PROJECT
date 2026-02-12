@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Jagadeesh Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Jagadeesh Reddy</h1>
+        <p>GRC | Third Party Security Risk | AI Security Enthusiast</p>
+
+        <div class="theme-buttons">
+            <button onclick="changeTheme('light')">Light</button>
+            <button onclick="changeTheme('dark')">Dark</button>
+            <button onclick="changeTheme('blue')">Blue</button>
+            <button onclick="changeTheme('green')">Green</button>
+        </div>
+    </header>
+
+    <section>
+        <h2>About Me</h2>
+        <p>
+            I specialize in Governance, Risk & Compliance with focus on
+            Third-Party Risk Management and AI Security.
+        </p>
+    </section>
+
+    <section>
+        <h2>Skills</h2>
+        <ul>
+            <li>ISO 27001</li>
+            <li>PCI DSS</li>
+            <li>Third Party Risk</li>
+            <li>AI Security</li>
+            <li>QuickBooks Online</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Contact Me</h2>
+        <form id="contactForm">
+            <input type="text" id="name" placeholder="Your Name" required>
+            <input type="email" id="email" placeholder="Your Email" required>
+            <textarea id="message" placeholder="Your Message" required></textarea>
+            <button type="submit">Send</button>
+        </form>
+        <p id="responseMessage"></p>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
