@@ -1,127 +1,182 @@
-import React from "react";
-import { motion } from "framer-motion";
-import { Card, CardContent } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Mail, Linkedin, Github } from "lucide-react";
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tanuja | Portfolio</title>
 
-export default function TanujaPortfolio() {
-  return (
-    <div className="relative overflow-x-hidden scroll-smooth">
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
 
-      {/* Animated Background */}
-      <div className="fixed inset-0 -z-10 overflow-hidden">
-        <motion.div
-          animate={{ x: [0, 100, -100, 0], y: [0, -50, 50, 0] }}
-          transition={{ duration: 20, repeat: Infinity }}
-          className="absolute top-10 left-10 w-72 h-72 bg-pink-400 rounded-full mix-blend-multiply filter blur-3xl opacity-40"
-        />
-        <motion.div
-          animate={{ x: [0, -120, 120, 0], y: [0, 60, -60, 0] }}
-          transition={{ duration: 25, repeat: Infinity }}
-          className="absolute bottom-10 right-10 w-80 h-80 bg-purple-400 rounded-full mix-blend-multiply filter blur-3xl opacity-40"
-        />
-        <motion.div
-          animate={{ x: [0, 80, -80, 0], y: [0, -80, 80, 0] }}
-          transition={{ duration: 30, repeat: Infinity }}
-          className="absolute top-1/2 left-1/2 w-96 h-96 bg-yellow-300 rounded-full mix-blend-multiply filter blur-3xl opacity-30"
-        />
-      </div>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+      scroll-behavior: smooth;
+    }
 
-      {/* Hero Section */}
-      <section className="min-h-screen flex flex-col items-center justify-center text-center px-6">
-        <motion.h1
-          initial={{ opacity: 0, y: -40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="text-6xl font-extrabold mb-6"
-        >
-          Hey 👋 I'm <span className="text-purple-700">Tanuja</span>
-        </motion.h1>
-        <motion.p
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ delay: 0.3 }}
-          className="text-xl max-w-2xl font-medium"
-        >
-          🎓 Student | 💻 Java Developer | 🌐 Creative Frontend Learner
-        </motion.p>
-      </section>
+    body {
+      overflow-x: hidden;
+      background: linear-gradient(-45deg, #ff9a9e, #fad0c4, #a18cd1, #fbc2eb);
+      background-size: 400% 400%;
+      animation: gradientBG 12s ease infinite;
+      color: white;
+    }
 
-      {/* About Section */}
-      <section className="min-h-screen flex items-center justify-center px-6">
-        <motion.div
-          initial={{ opacity: 0, x: -100 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          className="max-w-3xl"
-        >
-          <Card className="rounded-2xl shadow-2xl bg-white/80 backdrop-blur">
-            <CardContent className="p-10 text-lg leading-relaxed text-center">
-              I am a passionate student who loves building colorful and creative
-              websites. I enjoy solving problems using Java and C, and designing
-              interactive web pages using HTML.
-            </CardContent>
-          </Card>
-        </motion.div>
-      </section>
+    @keyframes gradientBG {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
 
-      {/* Skills Section */}
-      <section className="min-h-screen flex items-center justify-center px-6">
-        <motion.div
-          initial={{ opacity: 0, y: 100 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          className="w-full max-w-4xl space-y-8"
-        >
-          <h2 className="text-4xl font-bold text-center mb-8">My Skills 🚀</h2>
+    section {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 40px 20px;
+    }
 
-          {[
-            { name: "Java ☕", level: 85 },
-            { name: "HTML 🌐", level: 90 },
-            { name: "C Programming 💻", level: 75 },
-          ].map((skill, index) => (
-            <div key={index}>
-              <div className="flex justify-between mb-2 font-semibold text-lg">
-                <span>{skill.name}</span>
-                <span>{skill.level}%</span>
-              </div>
-              <div className="w-full bg-white rounded-full h-4 shadow-inner">
-                <motion.div
-                  initial={{ width: 0 }}
-                  whileInView={{ width: `${skill.level}%` }}
-                  transition={{ duration: 1.5 }}
-                  viewport={{ once: true }}
-                  className="h-4 rounded-full bg-gradient-to-r from-purple-500 via-pink-500 to-yellow-400"
-                />
-              </div>
-            </div>
-          ))}
-        </motion.div>
-      </section>
+    h1 {
+      font-size: 60px;
+      font-weight: 800;
+      margin-bottom: 20px;
+      animation: fadeDown 1.5s ease;
+    }
 
-      {/* Contact Section */}
-      <section className="min-h-screen flex flex-col items-center justify-center text-center px-6">
-        <motion.h2
-          initial={{ opacity: 0, scale: 0.8 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.8 }}
-          className="text-4xl font-bold mb-6"
-        >
-          Let's Connect 💌
-        </motion.h2>
-        <div className="flex gap-8 text-3xl">
-          <Github className="hover:scale-125 transition" />
-          <Linkedin className="hover:scale-125 transition" />
-          <Mail className="hover:scale-125 transition" />
-        </div>
-      </section>
+    h2 {
+      font-size: 40px;
+      margin-bottom: 20px;
+    }
 
-      {/* Footer */}
-      <footer className="text-center py-6 bg-white/70 backdrop-blur">
-        © {new Date().getFullYear()} Tanuja | Creative Portfolio
-      </footer>
+    p {
+      max-width: 600px;
+      font-size: 18px;
+      margin-bottom: 20px;
+    }
+
+    .btn {
+      padding: 12px 30px;
+      border-radius: 30px;
+      border: none;
+      cursor: pointer;
+      font-weight: 600;
+      background: white;
+      color: #a18cd1;
+      transition: 0.3s ease;
+    }
+
+    .btn:hover {
+      transform: scale(1.1);
+      background: #fff;
+      color: #ff758c;
+    }
+
+    /* Glass Card */
+    .card {
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(10px);
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+      margin: 20px;
+      width: 280px;
+      transition: 0.4s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-10px);
+    }
+
+    .skills-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    /* Animations */
+    @keyframes fadeDown {
+      from { opacity: 0; transform: translateY(-40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .fade-up {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: all 1s ease;
+    }
+
+    .fade-up.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: rgba(0,0,0,0.2);
+    }
+
+    @media(max-width:768px){
+      h1 { font-size: 40px; }
+      h2 { font-size: 28px; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Hero Section -->
+  <section>
+    <h1>Hey 👋 I'm Tanuja</h1>
+    <p>🎓 Student | 💻 Java Developer | 🌐 HTML & C Programmer</p>
+    <button class="btn">View My Work</button>
+  </section>
+
+  <!-- About Section -->
+  <section>
+    <h2>About Me ✨</h2>
+    <p class="fade-up">I am a passionate student who loves building creative and colorful websites. I enjoy coding in Java, HTML, and C, and I am continuously learning to become a professional developer.</p>
+  </section>
+
+  <!-- Skills Section -->
+  <section>
+    <h2>My Skills 🚀</h2>
+    <div class="skills-container">
+      <div class="card fade-up">Java ☕</div>
+      <div class="card fade-up">HTML 🌐</div>
+      <div class="card fade-up">C Programming 💻</div>
     </div>
-  );
-}
+  </section>
+
+  <!-- Contact Section -->
+  <section>
+    <h2>Let's Connect 💌</h2>
+    <p class="fade-up">Open to internships and collaboration opportunities.</p>
+    <button class="btn">Contact Me</button>
+  </section>
+
+  <footer>
+    © 2026 Tanuja | Creative Portfolio
+  </footer>
+
+  <script>
+    // Scroll Animation
+    const faders = document.querySelectorAll('.fade-up');
+    window.addEventListener('scroll', () => {
+      const triggerBottom = window.innerHeight * 0.8;
+      faders.forEach(fader => {
+        const boxTop = fader.getBoundingClientRect().top;
+        if(boxTop < triggerBottom){
+          fader.classList.add('active');
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
