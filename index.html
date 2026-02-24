@@ -1,256 +1,280 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Tanuja K | Portfolio</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tanuja K | Portfolio</title>
 
-    <!-- Google Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    <link rel="stylesheet" href="style.css">
+<style>
+
+/* RESET */
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+scroll-behavior:smooth;
+}
+
+/* ===== ANIMATED BACKGROUND ===== */
+body{
+height:100vh;
+color:white;
+background: linear-gradient(-45deg,#0f2027,#203a43,#2c5364,#000000);
+background-size:400% 400%;
+animation:gradientBG 12s ease infinite;
+overflow-x:hidden;
+}
+
+@keyframes gradientBG{
+0%{background-position:0% 50%;}
+50%{background-position:100% 50%;}
+100%{background-position:0% 50%;}
+}
+
+/* FLOATING PARTICLES */
+body::before{
+content:'';
+position:fixed;
+width:200%;
+height:200%;
+background-image: radial-gradient(circle,rgba(255,255,255,0.2) 1px,transparent 1px);
+background-size:50px 50px;
+animation:moveParticles 40s linear infinite;
+z-index:-1;
+}
+
+@keyframes moveParticles{
+0%{transform:translate(0,0);}
+100%{transform:translate(-500px,-500px);}
+}
+
+/* NAVBAR */
+nav{
+display:flex;
+justify-content:space-between;
+padding:20px 10%;
+}
+
+nav ul{
+display:flex;
+list-style:none;
+}
+
+nav ul li{
+margin-left:20px;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+transition:0.3s;
+}
+
+nav a:hover{
+color:#00f2fe;
+}
+
+/* HERO */
+.hero{
+text-align:center;
+padding:80px 20px;
+}
+
+.profile-pic{
+width:160px;
+height:160px;
+border-radius:50%;
+border:3px solid #00f2fe;
+object-fit:cover;
+margin-bottom:20px;
+}
+
+.btn{
+display:inline-block;
+padding:12px 25px;
+background:#00f2fe;
+color:black;
+border-radius:25px;
+margin-top:20px;
+text-decoration:none;
+transition:0.3s;
+}
+
+.btn:hover{
+transform:scale(1.1);
+}
+
+/* GLASS SECTION */
+.section{
+margin:60px 10%;
+padding:40px;
+background:rgba(255,255,255,0.08);
+backdrop-filter:blur(12px);
+border-radius:15px;
+}
+
+/* CERTIFICATES */
+.cert-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:20px;
+}
+
+.cert-card img{
+width:100%;
+border-radius:10px;
+transition:0.3s;
+}
+
+.cert-card img:hover{
+transform:scale(1.05);
+}
+
+/* CONTACT */
+form{
+display:flex;
+flex-direction:column;
+}
+
+form input, form textarea{
+margin:10px 0;
+padding:12px;
+border-radius:8px;
+border:none;
+}
+
+form button{
+padding:12px;
+border:none;
+background:#00f2fe;
+border-radius:20px;
+cursor:pointer;
+}
+
+.social{
+margin-top:20px;
+}
+
+.social a{
+color:white;
+font-size:20px;
+margin-right:15px;
+transition:0.3s;
+}
+
+.social a:hover{
+color:#00f2fe;
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+nav{
+flex-direction:column;
+align-items:center;
+}
+}
+
+</style>
 </head>
 <body>
 
-<!-- Navigation -->
+<!-- NAV -->
 <nav>
-    <h2 class="logo">Tanuja K</h2>
-    <ul>
-        <li><a href="#about">About</a></li>
-        <li><a href="#certificates">Certificates</a></li>
-        <li><a href="#contact">Contact</a></li>
-    </ul>
+<h2>Tanuja K</h2>
+<ul>
+<li><a href="#about">About</a></li>
+<li><a href="#certificates">Certificates</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
 </nav>
 
-<!-- Hero Section -->
+<!-- HERO -->
 <section class="hero">
-    <div class="hero-content">
-        <!-- Replace profile.jpg with your own image -->
-        <img src="profile.jpg" alt="Tanuja K" class="profile-pic">
-
-        <h1>Tanuja K</h1>
-        <h3>Web Developer / Tech Enthusiast</h3>
-        <p>Passionate about building modern, animated and responsive websites.</p>
-
-        <a href="#contact" class="btn">Contact Me</a>
-    </div>
+<img src="profile.jpg" class="profile-pic" alt="Your Photo">
+<h1>Tanuja K</h1>
+<h3>Web Developer / Tech Enthusiast</h3>
+<p>Creating modern animated websites with clean UI & smooth UX.</p>
+<a href="#contact" class="btn">Contact Me</a>
 </section>
 
-<!-- About Section -->
-<section id="about" class="glass">
-    <h2>About Me</h2>
-    <p>
-        I am a passionate Web Developer who loves creating visually appealing 
-        and user-friendly web applications. I focus on clean design, smooth 
-        animations and responsive layouts.
-    </p>
+<!-- ABOUT -->
+<section id="about" class="section">
+<h2>About Me</h2>
+<p>I am passionate about web development and love building modern,
+responsive and animated websites using HTML, CSS and JavaScript.</p>
 </section>
 
-<!-- Certificates Section -->
-<section id="certificates" class="glass">
-    <h2>My Certificates</h2>
+<!-- CERTIFICATES -->
+<section id="certificates" class="section">
+<h2>My Certificates</h2>
 
-    <div class="cert-grid">
-        <!-- Upload your certificate images -->
-        <div class="cert-card">
-            <img src="certificate1.jpg" alt="Certificate 1">
-            <p>Web Development Certificate</p>
-        </div>
+<div class="cert-grid">
+<div class="cert-card">
+<img src="certificate1.jpg" alt="">
+<p>Web Development Certificate</p>
+</div>
 
-        <div class="cert-card">
-            <img src="certificate2.jpg" alt="Certificate 2">
-            <p>JavaScript Certification</p>
-        </div>
+<div class="cert-card">
+<img src="certificate2.jpg" alt="">
+<p>JavaScript Certificate</p>
+</div>
 
-        <div class="cert-card">
-            <img src="certificate3.jpg" alt="Certificate 3">
-            <p>Frontend Development Certificate</p>
-        </div>
-    </div>
+<div class="cert-card">
+<img src="certificate3.jpg" alt="">
+<p>Frontend Development</p>
+</div>
+</div>
+
 </section>
 
-<!-- Contact Section -->
-<section id="contact" class="glass">
-    <h2>Contact Me</h2>
+<!-- CONTACT -->
+<section id="contact" class="section">
+<h2>Contact Me</h2>
 
-    <form id="contactForm">
-        <input type="text" id="name" placeholder="Your Name" required>
-        <input type="email" id="email" placeholder="Your Email" required>
-        <textarea id="message" placeholder="Your Message" required></textarea>
-        <button type="submit">Send Message</button>
-        <p id="successMsg"></p>
-    </form>
+<form id="contactForm">
+<input type="text" id="name" placeholder="Your Name" required>
+<input type="email" id="email" placeholder="Your Email" required>
+<textarea id="message" placeholder="Your Message" required></textarea>
+<button type="submit">Send Message</button>
+<p id="msg"></p>
+</form>
 
-    <div class="social">
-        <a href="#"><i class="fab fa-linkedin"></i></a>
-        <a href="#"><i class="fab fa-github"></i></a>
-        <a href="#"><i class="fas fa-envelope"></i></a>
-    </div>
+<div class="social">
+<a href="#"><i class="fab fa-linkedin"></i></a>
+<a href="#"><i class="fab fa-github"></i></a>
+<a href="#"><i class="fas fa-envelope"></i></a>
+</div>
 </section>
 
-<script src="script.js"></script>
+<script>
+
+/* CONTACT VALIDATION */
+document.getElementById("contactForm").addEventListener("submit",function(e){
+e.preventDefault();
+
+let name=document.getElementById("name").value.trim();
+let email=document.getElementById("email").value.trim();
+let message=document.getElementById("message").value.trim();
+let msg=document.getElementById("msg");
+
+if(name && email && message){
+msg.innerText="Message Sent Successfully!";
+msg.style.color="#00f2fe";
+this.reset();
+}else{
+msg.innerText="Please fill all fields!";
+msg.style.color="red";
+}
+});
+
+</script>
+
 </body>
 </html>
-{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
-body {
-    color: white;
-    background: linear-gradient(-45deg, #141E30, #243B55, #0f2027, #000000);
-    background-size: 400% 400%;
-    animation: gradientBG 12s ease infinite;
-}
-
-/* Animated Background */
-@keyframes gradientBG {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
-}
-
-/* Navbar */
-nav {
-    display: flex;
-    justify-content: space-between;
-    padding: 20px 10%;
-}
-
-nav ul {
-    list-style: none;
-    display: flex;
-}
-
-nav ul li {
-    margin-left: 20px;
-}
-
-nav ul li a {
-    text-decoration: none;
-    color: white;
-    transition: 0.3s;
-}
-
-nav ul li a:hover {
-    color: #00f2fe;
-}
-
-/* Hero */
-.hero {
-    text-align: center;
-    padding: 80px 20px;
-}
-
-.profile-pic {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    border: 3px solid #00f2fe;
-    margin-bottom: 20px;
-    object-fit: cover;
-}
-
-/* Button */
-.btn {
-    display: inline-block;
-    padding: 10px 25px;
-    background: #00f2fe;
-    color: black;
-    border-radius: 25px;
-    margin-top: 20px;
-    text-decoration: none;
-    transition: 0.3s;
-}
-
-.btn:hover {
-    transform: scale(1.1);
-}
-
-/* Glassmorphism */
-.glass {
-    margin: 50px 10%;
-    padding: 40px;
-    background: rgba(255, 255, 255, 0.08);
-    backdrop-filter: blur(12px);
-    border-radius: 15px;
-}
-
-/* Certificates */
-.cert-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 20px;
-}
-
-.cert-card {
-    text-align: center;
-    transition: 0.3s;
-}
-
-.cert-card img {
-    width: 100%;
-    border-radius: 10px;
-}
-
-.cert-card:hover {
-    transform: scale(1.05);
-}
-
-/* Contact */
-form {
-    display: flex;
-    flex-direction: column;
-}
-
-form input,
-form textarea {
-    margin: 10px 0;
-    padding: 12px;
-    border-radius: 8px;
-    border: none;
-}
-
-form button {
-    padding: 12px;
-    border: none;
-    background: #00f2fe;
-    border-radius: 20px;
-    cursor: pointer;
-}
-
-.social {
-    margin-top: 20px;
-}
-
-.social a {
-    color: white;
-    font-size: 20px;
-    margin-right: 15px;
-    transition: 0.3s;
-}
-
-.social a:hover {
-    color: #00f2fe;
-}
-
-/* Responsive */
-@media(max-width:768px){
-    nav {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    nav ul {
-        margin-top: 10px;
-    }
-}
