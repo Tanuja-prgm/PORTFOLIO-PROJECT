@@ -1,182 +1,404 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tanuja | Portfolio</title>
-
-  <!-- Google Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
-
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Poppins', sans-serif;
-      scroll-behavior: smooth;
-    }
-
-    body {
-      overflow-x: hidden;
-      background: linear-gradient(-45deg, #ff9a9e, #fad0c4, #a18cd1, #fbc2eb);
-      background-size: 400% 400%;
-      animation: gradientBG 12s ease infinite;
-      color: white;
-    }
-
-    @keyframes gradientBG {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
-    }
-
-    section {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      padding: 40px 20px;
-    }
-
-    h1 {
-      font-size: 60px;
-      font-weight: 800;
-      margin-bottom: 20px;
-      animation: fadeDown 1.5s ease;
-    }
-
-    h2 {
-      font-size: 40px;
-      margin-bottom: 20px;
-    }
-
-    p {
-      max-width: 600px;
-      font-size: 18px;
-      margin-bottom: 20px;
-    }
-
-    .btn {
-      padding: 12px 30px;
-      border-radius: 30px;
-      border: none;
-      cursor: pointer;
-      font-weight: 600;
-      background: white;
-      color: #a18cd1;
-      transition: 0.3s ease;
-    }
-
-    .btn:hover {
-      transform: scale(1.1);
-      background: #fff;
-      color: #ff758c;
-    }
-
-    /* Glass Card */
-    .card {
-      background: rgba(255, 255, 255, 0.15);
-      backdrop-filter: blur(10px);
-      padding: 30px;
-      border-radius: 20px;
-      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
-      margin: 20px;
-      width: 280px;
-      transition: 0.4s ease;
-    }
-
-    .card:hover {
-      transform: translateY(-10px);
-    }
-
-    .skills-container {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-
-    /* Animations */
-    @keyframes fadeDown {
-      from { opacity: 0; transform: translateY(-40px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    .fade-up {
-      opacity: 0;
-      transform: translateY(40px);
-      transition: all 1s ease;
-    }
-
-    .fade-up.active {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    footer {
-      text-align: center;
-      padding: 20px;
-      background: rgba(0,0,0,0.2);
-    }
-
-    @media(max-width:768px){
-      h1 { font-size: 40px; }
-      h2 { font-size: 28px; }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tanuja K | Web Developer & Tech Enthusiast</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-
-  <!-- Hero Section -->
-  <section>
-    <h1>Hey 👋 I'm Tanuja</h1>
-    <p>🎓 Student | 💻 Java Developer | 🌐 HTML & C Programmer</p>
-    <button class="btn">View My Work</button>
-  </section>
-
-  <!-- About Section -->
-  <section>
-    <h2>About Me ✨</h2>
-    <p class="fade-up">I am a passionate student who loves building creative and colorful websites. I enjoy coding in Java, HTML, and C, and I am continuously learning to become a professional developer.</p>
-  </section>
-
-  <!-- Skills Section -->
-  <section>
-    <h2>My Skills 🚀</h2>
-    <div class="skills-container">
-      <div class="card fade-up">Java ☕</div>
-      <div class="card fade-up">HTML 🌐</div>
-      <div class="card fade-up">C Programming 💻</div>
+    <!-- Animated Background -->
+    <div class="background-animation">
+        <div class="gradient-orb orb-1"></div>
+        <div class="gradient-orb orb-2"></div>
+        <div class="gradient-orb orb-3"></div>
     </div>
-  </section>
 
-  <!-- Contact Section -->
-  <section>
-    <h2>Let's Connect 💌</h2>
-    <p class="fade-up">Open to internships and collaboration opportunities.</p>
-    <button class="btn">Contact Me</button>
-  </section>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#home" class="logo">
+                <span class="logo-text">Tanuja<span class="highlight">K</span></span>
+            </a>
+            
+            <ul class="nav-links">
+                <li><a href="#home" class="nav-link active">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
 
-  <footer>
-    © 2026 Tanuja | Creative Portfolio
-  </footer>
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <p class="greeting">Hello, I'm</p>
+                <h1 class="hero-title">Tanuja K</h1>
+                <h2 class="hero-subtitle">Web Developer & Tech Enthusiast</h2>
+                <p class="hero-tagline">Crafting digital experiences that inspire and innovate</p>
+                <div class="hero-buttons">
+                    <a href="#contact" class="btn btn-primary">
+                        <span>Contact Me</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                    <a href="#projects" class="btn btn-secondary">
+                        <span>View Work</span>
+                    </a>
+                </div>
+                <div class="social-links">
+                    <a href="https://linkedin.com" target="_blank" class="social-icon" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="https://github.com" target="_blank" class="social-icon" aria-label="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="mailto:tanuja@example.com" class="social-icon" aria-label="Email">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="image-container">
+                    <div class="avatar-placeholder">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <div class="floating-elements">
+                        <div class="float-element html"><i class="fab fa-html5"></i></div>
+                        <div class="float-element css"><i class="fab fa-css3-alt"></i></div>
+                        <div class="float-element js"><i class="fab fa-js"></i></div>
+                        <div class="float-element react"><i class="fab fa-react"></i></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <span>Scroll Down</span>
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </section>
 
-  <script>
-    // Scroll Animation
-    const faders = document.querySelectorAll('.fade-up');
-    window.addEventListener('scroll', () => {
-      const triggerBottom = window.innerHeight * 0.8;
-      faders.forEach(fader => {
-        const boxTop = fader.getBoundingClientRect().top;
-        if(boxTop < triggerBottom){
-          fader.classList.add('active');
-        }
-      });
-    });
-  </script>
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">About Me</h2>
+            <div class="about-content">
+                <div class="about-text" data-aos="fade-right">
+                    <h3>Passionate About Creating Digital Solutions</h3>
+                    <p>
+                        I'm a dedicated web developer with a strong passion for creating innovative and 
+                        user-friendly digital experiences. My journey in technology is driven by curiosity 
+                        and a constant desire to learn and grow.
+                    </p>
+                    <p>
+                        I specialize in building modern, responsive websites and applications that combine 
+                        beautiful design with powerful functionality. Every project I undertake is an 
+                        opportunity to push boundaries and deliver exceptional results.
+                    </p>
+                    <div class="about-stats">
+                        <div class="stat">
+                            <span class="stat-number" data-target="2">0</span>
+                            <span class="stat-label">Years Experience</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number" data-target="15">0</span>
+                            <span class="stat-label">Projects Completed</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number" data-target="10">0</span>
+                            <span class="stat-label">Happy Clients</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image" data-aos="fade-left">
+                    <div class="image-card">
+                        <div class="card-content">
+                            <i class="fas fa-laptop-code"></i>
+                            <h4>Clean Code</h4>
+                            <p>Writing efficient, maintainable code</p>
+                        </div>
+                    </div>
+                    <div class="image-card">
+                        <div class="card-content">
+                            <i class="fas fa-paint-brush"></i>
+                            <h4>Creative Design</h4>
+                            <p>Modern and intuitive interfaces</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-</body>
-</html>
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">My Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-card" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="skill-icon html">
+                        <i class="fab fa-html5"></i>
+                    </div>
+                    <h3>HTML5</h3>
+                    <div class="skill-progress">
+                        <div class="progress-bar" data-width="95"></div>
+                    </div>
+                    <span class="skill-percentage">95%</span>
+                </div>
+                
+                <div class="skill-card" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="skill-icon css">
+                        <i class="fab fa-css3-alt"></i>
+                    </div>
+                    <h3>CSS3</h3>
+                    <div class="skill-progress">
+                        <div class="progress-bar" data-width="90"></div>
+                    </div>
+                    <span class="skill-percentage">90%</span>
+                </div>
+                
+                <div class="skill-card" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="skill-icon js">
+                        <i class="fab fa-js-square"></i>
+                    </div>
+                    <h3>JavaScript</h3>
+                    <div class="skill-progress">
+                        <div class="progress-bar" data-width="85"></div>
+                    </div>
+                    <span class="skill-percentage">85%</span>
+                </div>
+                
+                <div class="skill-card" data-aos="zoom-in" data-aos-delay="400">
+                    <div class="skill-icon react">
+                        <i class="fab fa-react"></i>
+                    </div>
+                    <h3>React</h3>
+                    <div class="skill-progress">
+                        <div class="progress-bar" data-width="80"></div>
+                    </div>
+                    <span class="skill-percentage">80%</span>
+                </div>
+                
+                <div class="skill-card" data-aos="zoom-in" data-aos-delay="500">
+                    <div class="skill-icon bootstrap">
+                        <i class="fab fa-bootstrap"></i>
+                    </div>
+                    <h3>Bootstrap</h3>
+                    <div class="skill-progress">
+                        <div class="progress-bar" data-width="88"></div>
+                    </div>
+                    <span class="skill-percentage">88%</span>
+                </div>
+                
+                <div class="skill-card" data-aos="zoom-in" data-aos-delay="600">
+                    <div class="skill-icon git">
+                        <i class="fab fa-git-alt"></i>
+                    </div>
+                    <h3>Git</h3>
+                    <div class="skill-progress">
+                        <div class="progress-bar" data-width="82"></div>
+                    </div>
+                    <span class="skill-percentage">82%</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Featured Projects</h2>
+            <div class="projects-grid">
+                <!-- Project 1 -->
+                <div class="project-card" data-aos="flip-left" data-aos-delay="100">
+                    <div class="project-image">
+                        <div class="project-placeholder">
+                            <i class="fas fa-shopping-cart"></i>
+                        </div>
+                        <div class="project-overlay">
+                            <a href="#" class="project-link">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                            <a href="#" class="project-link">
+                                <i class="fab fa-github"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>E-Commerce Platform</h3>
+                        <p>A fully responsive e-commerce website with shopping cart functionality, product filtering, and secure payment integration.</p>
+                        <div class="project-tags">
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>JavaScript</span>
+                        </div>
+                        <a href="#" class="btn btn-project">View Details</a>
+                    </div>
+                </div>
+                
+                <!-- Project 2 -->
+                <div class="project-card" data-aos="flip-left" data-aos-delay="200">
+                    <div class="project-image">
+                        <div class="project-placeholder">
+                            <i class="fas fa-tasks"></i>
+                        </div>
+                        <div class="project-overlay">
+                            <a href="#" class="project-link">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                            <a href="#" class="project-link">
+                                <i class="fab fa-github"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>Task Management App</h3>
+                        <p>A modern task management application with drag-and-drop functionality, categories, and progress tracking features.</p>
+                        <div class="project-tags">
+                            <span>React</span>
+                            <span>CSS3</span>
+                            <span>JavaScript</span>
+                        </div>
+                        <a href="#" class="btn btn-project">View Details</a>
+                    </div>
+                </div>
+                
+                <!-- Project 3 -->
+                <div class="project-card" data-aos="flip-left" data-aos-delay="300">
+                    <div class="project-image">
+                        <div class="project-placeholder">
+                            <i class="fas fa-utensils"></i>
+                        </div>
+                        <div class="project-overlay">
+                            <a href="#" class="project-link">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                            <a href="#" class="project-link">
+                                <i class="fab fa-github"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>Restaurant Website</h3>
+                        <p>An elegant restaurant website with online reservation system, menu display, and customer review section.</p>
+                        <div class="project-tags">
+                            <span>HTML</span>
+                            <span>Bootstrap</span>
+                            <span>JavaScript</span>
+                        </div>
+                        <a href="#" class="btn btn-project">View Details</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Get In Touch</h2>
+            <div class="contact-content">
+                <div class="contact-info" data-aos="fade-right">
+                    <h3>Let's Work Together</h3>
+                    <p>Have a project in mind? I'd love to hear about it. Drop me a message and let's create something amazing together.</p>
+                    
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4>Email</h4>
+                                <p>tanuja@example.com</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4>Location</h4>
+                                <p>India</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="social-links-large">
+                        <a href="https://linkedin.com" target="_blank" class="social-link">
+                            <i class="fab fa-linkedin-in"></i>
+                            <span>LinkedIn</span>
+                        </a>
+                        <a href="https://github.com" target="_blank" class="social-link">
+                            <i class="fab fa-github"></i>
+                            <span>GitHub</span>
+                        </a>
+                        <a href="https://twitter.com" target="_blank" class="social-link">
+                            <i class="fab fa-twitter"></i>
+                            <span>Twitter</span>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="contact-form-container" data-aos="fade-left">
+                    <form id="contactForm" class="contact-form">
+                        <div class="form-group">
+                            <label for="name">Your Name</label>
+                            <input type="text" id="name" name="name" placeholder="John Doe" required>
+                            <span class="error-message"></span>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" placeholder="john@example.com" required>
+                            <span class="error-message"></span>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Your Message</label>
+                            <textarea id="message" name="message" rows="5" placeholder="Tell me about your project..." required></textarea>
+                            <span class="error-message"></span>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-submit">
+                            <span>Send Message</span>
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                    
+                    <!-- Success Message -->
+                    <div id="successMessage" class="success-message">
+                        <div class="success-icon">
+                            <i class="fas fa-check"></i>
+                        </div>
+                        <h3>Message Sent!</h3>
+                        <p>Thank you for reaching out. I'll get back to you soon.</p>
+                        <button class="btn btn-reset" id="resetForm">Send Another Message</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p class="footer-text">© 2024 Tanuja K
