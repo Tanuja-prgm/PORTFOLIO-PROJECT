@@ -3,17 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Tanuja K | Portfolio</title>
+<title>Tanuja K | Premium Portfolio</title>
 
-<!-- Google Font -->
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-
-<!-- Font Awesome -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
 <style>
-
-/* RESET */
 *{
 margin:0;
 padding:0;
@@ -22,44 +17,36 @@ font-family:'Poppins',sans-serif;
 scroll-behavior:smooth;
 }
 
-/* ===== ANIMATED BACKGROUND ===== */
 body{
-height:100vh;
+background:#0a0f1c;
 color:white;
-background: linear-gradient(-45deg,#0f2027,#203a43,#2c5364,#000000);
-background-size:400% 400%;
-animation:gradientBG 12s ease infinite;
 overflow-x:hidden;
 }
 
-@keyframes gradientBG{
-0%{background-position:0% 50%;}
-50%{background-position:100% 50%;}
-100%{background-position:0% 50%;}
-}
-
-/* FLOATING PARTICLES */
-body::before{
-content:'';
+/* ===== MOVING STARS BACKGROUND ===== */
+.stars{
 position:fixed;
-width:200%;
-height:200%;
-background-image: radial-gradient(circle,rgba(255,255,255,0.2) 1px,transparent 1px);
-background-size:50px 50px;
-animation:moveParticles 40s linear infinite;
-z-index:-1;
+width:100%;
+height:100%;
+background:url("https://www.transparenttextures.com/patterns/stardust.png");
+animation:moveStars 100s linear infinite;
+z-index:-2;
 }
 
-@keyframes moveParticles{
-0%{transform:translate(0,0);}
-100%{transform:translate(-500px,-500px);}
+@keyframes moveStars{
+from{background-position:0 0;}
+to{background-position:10000px 5000px;}
 }
 
-/* NAVBAR */
+/* ===== NAVBAR ===== */
 nav{
 display:flex;
 justify-content:space-between;
 padding:20px 10%;
+position:sticky;
+top:0;
+background:rgba(0,0,0,0.4);
+backdrop-filter:blur(10px);
 }
 
 nav ul{
@@ -81,60 +68,85 @@ nav a:hover{
 color:#00f2fe;
 }
 
-/* HERO */
+/* ===== HERO ===== */
 .hero{
 text-align:center;
-padding:80px 20px;
+padding:100px 20px;
 }
 
 .profile-pic{
-width:160px;
-height:160px;
+width:170px;
+height:170px;
 border-radius:50%;
 border:3px solid #00f2fe;
+box-shadow:0 0 25px #00f2fe;
 object-fit:cover;
 margin-bottom:20px;
 }
 
+.typing{
+font-size:40px;
+font-weight:700;
+color:#00f2fe;
+}
+
+/* GLOW BUTTON */
 .btn{
 display:inline-block;
-padding:12px 25px;
+padding:12px 30px;
+margin-top:25px;
 background:#00f2fe;
 color:black;
-border-radius:25px;
-margin-top:20px;
+border-radius:30px;
 text-decoration:none;
+font-weight:600;
 transition:0.3s;
+box-shadow:0 0 15px #00f2fe;
 }
 
 .btn:hover{
 transform:scale(1.1);
+box-shadow:0 0 30px #00f2fe;
 }
 
-/* GLASS SECTION */
+/* ===== GLASS SECTIONS ===== */
 .section{
 margin:60px 10%;
-padding:40px;
-background:rgba(255,255,255,0.08);
-backdrop-filter:blur(12px);
-border-radius:15px;
+padding:50px;
+background:rgba(255,255,255,0.05);
+backdrop-filter:blur(15px);
+border-radius:20px;
+opacity:0;
+transform:translateY(50px);
+transition:1s;
+}
+
+.section.show{
+opacity:1;
+transform:translateY(0);
 }
 
 /* CERTIFICATES */
 .cert-grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-gap:20px;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:25px;
+margin-top:30px;
+}
+
+.cert-card{
+overflow:hidden;
+border-radius:15px;
+transition:0.4s;
 }
 
 .cert-card img{
 width:100%;
-border-radius:10px;
-transition:0.3s;
+transition:0.4s;
 }
 
-.cert-card img:hover{
-transform:scale(1.05);
+.cert-card:hover img{
+transform:scale(1.1);
 }
 
 /* CONTACT */
@@ -144,9 +156,9 @@ flex-direction:column;
 }
 
 form input, form textarea{
-margin:10px 0;
+margin:12px 0;
 padding:12px;
-border-radius:8px;
+border-radius:10px;
 border:none;
 }
 
@@ -154,17 +166,18 @@ form button{
 padding:12px;
 border:none;
 background:#00f2fe;
-border-radius:20px;
+border-radius:25px;
 cursor:pointer;
+font-weight:600;
 }
 
 .social{
-margin-top:20px;
+margin-top:25px;
 }
 
 .social a{
 color:white;
-font-size:20px;
+font-size:22px;
 margin-right:15px;
 transition:0.3s;
 }
@@ -179,13 +192,17 @@ nav{
 flex-direction:column;
 align-items:center;
 }
+.typing{
+font-size:28px;
 }
-
+}
 </style>
 </head>
+
 <body>
 
-<!-- NAV -->
+<div class="stars"></div>
+
 <nav>
 <h2>Tanuja K</h2>
 <ul>
@@ -195,49 +212,30 @@ align-items:center;
 </ul>
 </nav>
 
-<!-- HERO -->
 <section class="hero">
 <img src="profile.jpg" class="profile-pic" alt="Your Photo">
-<h1>Tanuja K</h1>
-<h3>Web Developer / Tech Enthusiast</h3>
-<p>Creating modern animated websites with clean UI & smooth UX.</p>
+<div class="typing" id="typing"></div>
+<p>Web Developer / Tech Enthusiast</p>
 <a href="#contact" class="btn">Contact Me</a>
 </section>
 
-<!-- ABOUT -->
 <section id="about" class="section">
 <h2>About Me</h2>
-<p>I am passionate about web development and love building modern,
-responsive and animated websites using HTML, CSS and JavaScript.</p>
+<p>I love building modern animated websites with clean UI and smooth UX. 
+Passionate about frontend technologies and creative design.</p>
 </section>
 
-<!-- CERTIFICATES -->
 <section id="certificates" class="section">
 <h2>My Certificates</h2>
-
 <div class="cert-grid">
-<div class="cert-card">
-<img src="certificate1.jpg" alt="">
-<p>Web Development Certificate</p>
+<div class="cert-card"><img src="certificate1.jpg"></div>
+<div class="cert-card"><img src="certificate2.jpg"></div>
+<div class="cert-card"><img src="certificate3.jpg"></div>
 </div>
-
-<div class="cert-card">
-<img src="certificate2.jpg" alt="">
-<p>JavaScript Certificate</p>
-</div>
-
-<div class="cert-card">
-<img src="certificate3.jpg" alt="">
-<p>Frontend Development</p>
-</div>
-</div>
-
 </section>
 
-<!-- CONTACT -->
 <section id="contact" class="section">
 <h2>Contact Me</h2>
-
 <form id="contactForm">
 <input type="text" id="name" placeholder="Your Name" required>
 <input type="email" id="email" placeholder="Your Email" required>
@@ -255,23 +253,35 @@ responsive and animated websites using HTML, CSS and JavaScript.</p>
 
 <script>
 
-/* CONTACT VALIDATION */
+/* ===== TYPING EFFECT ===== */
+const text="Tanuja K";
+let i=0;
+function type(){
+if(i<text.length){
+document.getElementById("typing").innerHTML+=text.charAt(i);
+i++;
+setTimeout(type,150);
+}
+}
+type();
+
+/* ===== SCROLL REVEAL ===== */
+const sections=document.querySelectorAll(".section");
+window.addEventListener("scroll",()=>{
+sections.forEach(sec=>{
+const top=sec.getBoundingClientRect().top;
+if(top<window.innerHeight-100){
+sec.classList.add("show");
+}
+});
+});
+
+/* CONTACT */
 document.getElementById("contactForm").addEventListener("submit",function(e){
 e.preventDefault();
-
-let name=document.getElementById("name").value.trim();
-let email=document.getElementById("email").value.trim();
-let message=document.getElementById("message").value.trim();
-let msg=document.getElementById("msg");
-
-if(name && email && message){
-msg.innerText="Message Sent Successfully!";
-msg.style.color="#00f2fe";
+document.getElementById("msg").innerText="Message Sent Successfully!";
+document.getElementById("msg").style.color="#00f2fe";
 this.reset();
-}else{
-msg.innerText="Please fill all fields!";
-msg.style.color="red";
-}
 });
 
 </script>
